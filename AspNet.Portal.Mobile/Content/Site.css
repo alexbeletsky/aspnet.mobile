@@ -467,7 +467,7 @@ ul#social li {
     .articles .article
     {
         padding: 15px 0;
-        height: 70px; 
+        min-height: 70px; 
         margin-bottom: 20px;
         border-bottom: 1px solid #c8c8c8;
     }
@@ -490,7 +490,7 @@ ul#social li {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
-    color: #3e5667
+    color: #3e5667;
 }
 
 .article img
@@ -499,6 +499,30 @@ ul#social li {
     float: left;
     margin-right: 10px;
 }
+
+.controls
+{
+    text-align: center;
+}
+
+    .controls a
+    {
+        color: #3e5667;
+        font-weight: bold;
+    }
+
+        .controls a.disabled
+        {
+            color: #999;
+            cursor: default;
+            text-decoration: none;
+        }
+
+            .controls a.disabled:hover
+            {
+                background: none;
+            }
+
 
 /********************
 *   Mobile Styles   *
