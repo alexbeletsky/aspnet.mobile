@@ -485,6 +485,11 @@ ul#social li {
     color: #999;
 }
 
+.article .description
+{
+    
+}
+
 .article a
 {
     text-decoration: none;
@@ -698,4 +703,25 @@ ul#social li {
             text-indent: 0;
             width: auto;
         }
+
+.articles .article
+{
+    min-height: 30px;
+}
+           
+.article .avatar
+{
+    width: 40px;
+}
+
+.article .date
+{
+    display: none;
+}
+
+.article .description
+{
+    display: none;
+}
+
 }
