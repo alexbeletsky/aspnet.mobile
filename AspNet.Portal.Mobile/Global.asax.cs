@@ -9,6 +9,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.WebPages;
 
 namespace AspNet.Portal.Mobile
 {
@@ -30,6 +31,12 @@ namespace AspNet.Portal.Mobile
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Readability",
+                url: "{controller}/{url}",
+                defaults: new { controller = "Readability", action = "Index" }
             );
 
             routes.MapRoute(
