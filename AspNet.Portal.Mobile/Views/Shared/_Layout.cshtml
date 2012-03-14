@@ -2,11 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
-        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
-        <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>
+
+        <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/knockout-2.0.0.js")"></script>
+
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")" />
+
         <meta name="viewport" content="width=device-width" />
     </head>
     <body>
