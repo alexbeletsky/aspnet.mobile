@@ -2,21 +2,22 @@
     ViewBag.Title = "ASP.NET Articles";
 }
 
-<div class="articles" data-bind="foreach: articles">
-    <div class="article">
-        <a data-bind="attr: { href: link, title: title }">
-            <img class="avatar" data-bind="attr: { src: imageUrl, alt: title }" />
-        </a>
-        <a data-bind="attr: { href: linkForMobile, title: title }, text: title"></a>
-        <p class="date" data-bind="text: date"></p>
-        <p class="description" data-bind="text: description"></p>
-    </div>
+<div>
+    <ul data-bind="foreach: articles" data-role="listview" data-theme="c">
+        <li>
+            <a data-bind="attr: { href: linkForMobile, title: title }">
+                <img class="avatar" data-bind="attr: { src: imageUrl, alt: title }" />
+                <h3 data-bind="text: title"></h3>
+                <p class="date" data-bind="text: date"></p>
+                <p class="description" data-bind="text: description"></p>
+            </a>
+        </li>
+    </ul>
 </div>
-
-<div class="controls">
-    <a href="#" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked">PREV</a>
-    <a href="#" data-bind="click: nextPageClicked">NEXT</a>
-</div>
+<p class="controls">
+    <a href="#" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked" data-inline="true" data-icon="arrow-l" data-role="button">PREV</a>
+    <a href="#" data-bind="click: nextPageClicked" data-inline="true" data-icon="arrow-r" data-iconpos="right" data-role="button">NEXT</a>
+</p>
 
 @section Scripts {
     <script type="text/javascript" src="Scripts/App/Models/Article.js"></script>

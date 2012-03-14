@@ -41,9 +41,10 @@ input[type="password"].input-validation-error {
         border-bottom: 1px solid #c8c8c8;
     }
 
-.article .avatar
+.avatar
 {
-    width: 70px;
+    width: 100%;
+    height: 100%;
 }
 
 .article .date

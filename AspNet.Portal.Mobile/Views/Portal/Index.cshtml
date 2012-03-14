@@ -6,10 +6,10 @@
     <div class="article">
         <a data-bind="attr: { href: link, title: title }">
             <img class="avatar" data-bind="attr: { src: imageUrl, alt: title }" />
+            <a data-bind="attr: { href: link, title: title }, text: title"></a>
+            <p class="date" data-bind="text: date"></p>
+            <p class="description" data-bind="text: description"></p>
         </a>
-        <a data-bind="attr: { href: link, title: title }, text: title"></a>
-        <p class="date" data-bind="text: date"></p>
-        <p class="description" data-bind="text: description"></p>
     </div>
 </div>
 
