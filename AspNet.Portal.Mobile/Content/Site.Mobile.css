@@ -1,0 +1,98 @@
+﻿.view-switcher {
+    padding: 0.5em; 
+    font-weight: normal;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input[type="text"].input-validation-error,
+input[type="password"].input-validation-error {
+    border: solid 1px #e80c4d;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.articles
+{
+    width: 100%;
+}
+
+    .articles .article
+    {
+        padding: 15px 0;
+        min-height: 70px; 
+        margin-bottom: 20px;
+        border-bottom: 1px solid #c8c8c8;
+    }
+
+.article .avatar
+{
+    width: 70px;
+}
+
+.article .date
+{
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 4px 0;
+    color: #999;
+}
+
+.article .description
+{
+    
+}
+
+.article a
+{
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3e5667;
+}
+
+.article img
+{
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+.controls
+{
+    text-align: center;
+}
+
+    .controls a
+    {
+        color: #3e5667;
+        font-weight: bold;
+    }
+
+        .controls a.disabled
+        {
+            color: #999;
+            cursor: default;
+            text-decoration: none;
+        }
+
+            .controls a.disabled:hover
+            {
+                background: none;
+            }
