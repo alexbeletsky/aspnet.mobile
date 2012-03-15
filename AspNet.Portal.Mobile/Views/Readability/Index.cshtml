@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Article";
+}
+
+@section header {
+    <a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-l" data-rel="back">Back</a>
+    <a href="@ViewBag.Url" data-role="button" data-mini="true" data-inline="true">View original</a>
+}
+
+<div class="readable">@Html.Raw(ViewBag.Content)</div>
