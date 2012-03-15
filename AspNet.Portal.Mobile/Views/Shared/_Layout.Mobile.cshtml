@@ -13,8 +13,9 @@
     </head> 
 <body> 
 
-    <div data-role="page" data-theme="a">
-        <div data-role="header">
+    <div data-role="page" data-theme="b">
+        <div data-role="header" data-position="inline">
+            @RenderSection("header", false)
             <h1>@ViewBag.Title</h1>
         </div>
 

@@ -97,3 +97,15 @@ input[type="password"].input-validation-error {
             {
                 background: none;
             }
+
+.readable
+{
+    line-height: 1.4em;
+}
+
+    .readable h1
+    {
+        line-height: 1.2em;
+    }
+
+

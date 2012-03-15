@@ -1,11 +1,13 @@
-﻿$(function () {
+﻿/// <reference path="../../_references.js" />
+
+$(function () {
 
     function ArticlesViewModel() {
 
         var self = this;
         self.articles = ko.observableArray([]);
         self.currentPage = ko.observable(1);
-
+        
         $.get('/api/articles', function (r) {
             updateArticles(r);
         });
@@ -19,20 +21,22 @@
                 self.currentPage(prevPage);
                 updateArticles(r);
             });
-        }
-
+            
+            return true;
+        };
         self.nextPageClicked = function () {
             var nextPage = self.currentPage() + 1;
             $.get('/api/articles/' + nextPage, function (r) {
                 self.currentPage(nextPage);
                 updateArticles(r);
             });
-        }
 
+            return true;
+        };
         var updateArticles = function (r) {
             var mapped = $.map(r, function (a) { return new Article(a); });
             self.articles(mapped);
-        }
+        };
     };
 
     ko.applyBindings(new ArticlesViewModel());

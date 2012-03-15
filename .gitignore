@@ -32,6 +32,8 @@ _ReSharper*
 *.Cache
 *.StyleCop
 *sublime*
+*crunchsolution*
+*crunchproject*
 
 TestResult.xml
 submit.xml

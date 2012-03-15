@@ -35,7 +35,7 @@ namespace AspNet.Portal.Mobile
 
             routes.MapRoute(
                 name: "Readability",
-                url: "{controller}/{url}",
+                url: "{controller}/{action}/{url}",
                 defaults: new { controller = "Readability", action = "Index" }
             );
 
