@@ -5,7 +5,10 @@
     self.currentPage = ko.observable(1);
 
     var cache = JSON.parse(localStorage.getItem('cache'));
-    self.articles(cache.articles);
+    if (cache.articles) {
+        var mapped = $.map(cache.articles, function(a) { return new Article().fromCache(a); });
+        self.articles(mapped);
+    }
 
     self.prevPageClicked = function () {
         return true;
@@ -14,6 +17,6 @@
         return true;
     };
     self.onArticleClicked = function (article) {
-        article.setRead();
+        localStorage.setItem('url', article.url);
     };
 }

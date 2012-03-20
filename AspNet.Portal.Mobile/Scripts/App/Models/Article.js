@@ -1,18 +1,37 @@
-﻿function Article(article) {
-    this.title = article.Title;
-    this.link = decodeURIComponent(article.Link.replace(/\+/g, " "));
-    this.linkForMobile = '/readability?url=' + this.link;
-    this.date = article.Date;
-    this.description = article.Description;
-    this.imageUrl = article.ImageUrl;
+﻿function Article() {
 
-    this.setRead = function() {
+    this.fromData = function(d) {
+        this.title = d.Title;
+        this.url = decodeURIComponent(d.Link.replace( /\+/g , " "));
+        this.urlForMobile = '/readability?url=' + this.url;
+        this.date = d.Date;
+        this.description = d.Description;
+        this.imageUrl = d.ImageUrl;
+
+        return this;
+    };
+
+    this.fromCache = function(d) {
+        this.title = d.title;
+        this.url = d.url;
+        this.urlForMobile = '/cache';
+        this.date = d.date;
+        this.description = d.description;
+        this.imageUrl = 'none';
+        this.cached = true;
+
+        return this;
+    };
+    
+    this.setRead = function () {
+        if (this.cached)
+            return;
+
         var cache = JSON.parse(localStorage.getItem('cache'));
-        if (_.isNull(cache)) {
-            cache = { articles: [] };
+        
+        if (_.indexOf(cache.articles, this) == -1) {
+            cache.articles.push(this);
+            localStorage.setItem('cache', JSON.stringify(cache));
         }
-
-        cache.articles.push(this);
-        localStorage.setItem('cache', JSON.stringify(cache));
     };
 };

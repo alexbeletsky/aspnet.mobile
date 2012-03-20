@@ -9,6 +9,22 @@
 
 @{
     var content = Html.Raw(ViewBag.Content);
+    var url = ViewBag.Url;
 }
 
 <div class="readable">@content</div>
+
+<script>
+
+    $(function() {
+        var url = '@url';
+        var content = $('.readable').html();
+
+        var cache = JSON.parse(localStorage.getItem('cache'));
+
+        cache.content[url] = content;
+        
+        localStorage.setItem('cache', JSON.stringify(cache));
+    });
+        
+</script>

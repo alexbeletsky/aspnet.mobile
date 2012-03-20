@@ -11,18 +11,12 @@
 <script type="text/javascript">
 
     $('.page').live('pageshow', function () {
-        var url = getParameterByName('url');
+
+        var url = localStorage.getItem('url');
+        var cache = JSON.parse(localStorage.getItem('cache'));
+
+        var content = cache.content[url];
+        $('.readable').html(content);
     });
-    
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-        var regexS = "[\\?&]" + name + "=([^&#]*)";
-        var regex = new RegExp(regexS);
-        var results = regex.exec(window.location.search);
-        if (results == null)
-            return "";
-        else
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
 
 </script>

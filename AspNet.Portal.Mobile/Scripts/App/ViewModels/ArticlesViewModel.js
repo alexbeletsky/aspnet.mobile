@@ -35,7 +35,7 @@ function ArticlesViewModel() {
         article.setRead();
     };
     var updateArticles = function (r) {
-        var mapped = $.map(r, function (a) { return new Article(a); });
+        var mapped = $.map(r, function (a) { return new Article().fromData(a); });
         self.articles(mapped);
     };
 };

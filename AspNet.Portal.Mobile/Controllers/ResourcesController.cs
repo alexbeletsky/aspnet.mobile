@@ -23,7 +23,7 @@ namespace AspNet.Portal.Mobile.Controllers
             cacheResources.AddRange(contentPaths);
             cacheResources.AddRange(scriptsPaths);
 
-            var manifestResult = new ManifestResult("1.0")
+            var manifestResult = new ManifestResult("1.1")
             {
                 NetworkResources = new [] { "*", "/api/articles", "/readability" },
                 CacheResources = cacheResources,

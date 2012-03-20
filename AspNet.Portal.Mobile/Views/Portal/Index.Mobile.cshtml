@@ -5,7 +5,7 @@
 <div>
     <ul data-bind="foreach: articles" data-role="listview" data-theme="c">
         <li>
-            <a data-bind="attr: { href: linkForMobile, title: title }, click: $parent.onArticleClicked">
+            <a data-bind="attr: { href: urlForMobile, title: title }, click: $parent.onArticleClicked">
                 <img class="avatar" data-bind="attr: { src: imageUrl, alt: title }" />
                 <h3 data-bind="text: title"></h3>
                 <p class="date" data-bind="text: date"></p>
@@ -27,7 +27,7 @@
     <script type="text/javascript">
 
         $(function() {
-            if (false) {
+            if (false /*window.applicationOnline*/) {
                 ko.applyBindings(new ArticlesViewModel());
             } else {
                 ko.applyBindings(new ArticlesOfflineViewModel());
