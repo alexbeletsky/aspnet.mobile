@@ -6,14 +6,13 @@
     this.description = article.Description;
     this.imageUrl = article.ImageUrl;
 
-    var cache = JSON.parse(localStorage.getItem('readArticles'));
-    this.isRead = ko.observable(cache != null && cache[this.link] != null);
-    
-    if (this.isRead()) {
-        this.linkForMobile = '/cache?url=' + this.link;
-    }
-
     this.setRead = function() {
-        this.isRead(true);
+        var cache = JSON.parse(localStorage.getItem('cache'));
+        if (_.isNull(cache)) {
+            cache = { articles: [] };
+        }
+
+        cache.articles.push(this);
+        localStorage.setItem('cache', JSON.stringify(cache));
     };
 };

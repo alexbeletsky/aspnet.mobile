@@ -4,7 +4,7 @@
 
 <div>
     <ul data-bind="foreach: articles" data-role="listview" data-theme="c">
-        <li data-bind="css: { read: isRead() }">
+        <li>
             <a data-bind="attr: { href: linkForMobile, title: title }, click: $parent.onArticleClicked">
                 <img class="avatar" data-bind="attr: { src: imageUrl, alt: title }" />
                 <h3 data-bind="text: title"></h3>
@@ -20,12 +20,18 @@
 </p>
 
 @section Scripts {
-    <script type="text/javascript" src="Scripts/App/Models/Article.js"></script>
-    <script type="text/javascript" src="Scripts/App/ViewModels/ArticlesViewModel.js"></script>
+    <script type="text/javascript" src="~/Scripts/App/Models/Article.js"></script>
+    <script type="text/javascript" src="~/Scripts/App/ViewModels/ArticlesViewModel.js"></script>
+    <script type="text/javascript" src="~/Scripts/App/ViewModels/ArticlesOfflineViewModel.js"></script>
+
     <script type="text/javascript">
 
         $(function() {
-            ko.applyBindings(new ArticlesViewModel());
+            if (false) {
+                ko.applyBindings(new ArticlesViewModel());
+            } else {
+                ko.applyBindings(new ArticlesOfflineViewModel());
+            }
         });
 
     </script>

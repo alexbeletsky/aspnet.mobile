@@ -11,14 +11,7 @@
 <script type="text/javascript">
 
     $('.page').live('pageshow', function () {
-
         var url = getParameterByName('url');
-        var cache = JSON.parse(localStorage.getItem('readArticles'));
-
-        var content = cache[url];
-
-        $('.readable').html(content);
-
     });
     
     function getParameterByName(name) {

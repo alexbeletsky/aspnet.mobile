@@ -25,9 +25,14 @@ namespace AspNet.Portal.Mobile.Controllers
 
             var manifestResult = new ManifestResult("1.0")
             {
-                NetworkResources = new [] { "/api/articles", "/readability" },
+                NetworkResources = new [] { "*", "/api/articles", "/readability" },
                 CacheResources = cacheResources,
-                FallbackResources = new Dictionary<string, string> { { "/", Url.Action("Fallback", "Portal") } }
+                FallbackResources = new Dictionary<string, string> 
+                    { 
+                        { "/", Url.Action("Fallback", "Portal") },
+                        { "/Modes/Online.js", "/Modes/Offline.js" }
+                    },
+                ExprirationToken = DateTime.Now.ToString("dd/MM/yyyy HH:mm")
             };
 
             return manifestResult;
@@ -58,6 +63,7 @@ namespace AspNet.Portal.Mobile.Controllers
         public IEnumerable<string> CacheResources { get; set; }
         public IEnumerable<string> NetworkResources { get; set; }
         public Dictionary<string, string> FallbackResources { get; set; }
+        public string ExprirationToken { get; set; }
 
         protected override void WriteFile(HttpResponseBase response)
         {
@@ -65,12 +71,13 @@ namespace AspNet.Portal.Mobile.Controllers
             WriteCacheResources(response);
             WriteNetwork(response);
             WriteFallback(response);
+            WriteExpires(response);
         }
 
         private void WriteManifestHeader(HttpResponseBase response)
         {
             response.Output.WriteLine("CACHE MANIFEST");
-            response.Output.WriteLine("#V" + Version ?? string.Empty);
+            response.Output.WriteLine("#V" + Version);
         }
 
         private void WriteCacheResources(HttpResponseBase response)
@@ -94,6 +101,13 @@ namespace AspNet.Portal.Mobile.Controllers
             response.Output.WriteLine("FALLBACK:");
             foreach (var fallbackResource in FallbackResources)
                 response.Output.WriteLine(fallbackResource.Key + " " + fallbackResource.Value);
+        }
+
+        private void WriteExpires(HttpResponseBase response)
+        {
+            response.Output.WriteLine();
+            response.Output.WriteLine("# Expire the cache after server restart");
+            response.Output.WriteLine("# " + ExprirationToken);
         }
     }
 }
