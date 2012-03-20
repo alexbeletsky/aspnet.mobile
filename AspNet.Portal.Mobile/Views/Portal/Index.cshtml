@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "ASP.NET Articles";
 }
-
 <div class="articles" data-bind="foreach: articles">
     <div class="article">
         <a data-bind="attr: { href: link, title: title }">
@@ -12,13 +11,18 @@
         </a>
     </div>
 </div>
-
 <div class="controls">
-    <a href="#" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked">PREV</a>
-    <a href="#" data-bind="click: nextPageClicked">NEXT</a>
+    <a href="#" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked">
+        PREV</a><a href="#" data-bind="click: nextPageClicked">NEXT</a>
 </div>
-
 @section Scripts {
     <script type="text/javascript" src="Scripts/App/Models/Article.js"></script>
     <script type="text/javascript" src="Scripts/App/ViewModels/ArticlesViewModel.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            ko.applyBindings(new ArticlesViewModel());
+        });
+
+    </script>
 }

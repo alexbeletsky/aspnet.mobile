@@ -27,6 +27,9 @@ namespace AspNet.Portal.Mobile
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute("cache.manifest", "cache.manifest", new { controller = "Resources", action = "Manifest" });
+
             routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

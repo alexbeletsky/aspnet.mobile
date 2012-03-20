@@ -1,19 +1,21 @@
 ﻿<!DOCTYPE html> 
-<html> 
+<html manifest="@Url.RouteUrl("cache.manifest")">
     <head> 
         <meta charset="utf-8" />
+
         <title>@ViewBag.Title - Mobile</title> 
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="@Url.Content("~/Content/jquery.mobile-1.0b3.min.css")" />
         <link rel="stylesheet" href="@Url.Content("~/Content/Site.Mobile.css")" />
-        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.6.4.min.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mobile-1.0b3.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.6.4.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mobile-1.0b3.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/Scripts/knockout-2.0.0.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/underscore.js")"></script>
 
     </head> 
 <body> 
 
-    <div data-role="page" data-theme="b">
+    <div class="page" data-role="page" data-theme="b">
         <div data-role="header" data-position="inline">
             @RenderSection("header", false)
             <h1>@ViewBag.Title</h1>

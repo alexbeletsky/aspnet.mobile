@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Article";
+}
+
+@section header {
+    <a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-l" data-rel="back">Back</a>
+}
+
+<div class="readable"></div>
+
+<script type="text/javascript">
+
+    $('.page').live('pageshow', function () {
+
+        var url = getParameterByName('url');
+        var cache = JSON.parse(localStorage.getItem('readArticles'));
+
+        var content = cache[url];
+
+        $('.readable').html(content);
+
+    });
+    
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.search);
+        if (results == null)
+            return "";
+        else
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+</script>

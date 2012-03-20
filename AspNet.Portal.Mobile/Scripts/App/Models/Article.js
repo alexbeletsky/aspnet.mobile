@@ -1,15 +1,19 @@
 ﻿function Article(article) {
     this.title = article.Title;
-    this.link = article.Link;
+    this.link = decodeURIComponent(article.Link.replace(/\+/g, " "));
     this.linkForMobile = '/readability?url=' + this.link;
     this.date = article.Date;
     this.description = article.Description;
     this.imageUrl = article.ImageUrl;
 
-    this.isRead = ko.observable(localStorage.getItem(this.link) || false);
+    var cache = JSON.parse(localStorage.getItem('readArticles'));
+    this.isRead = ko.observable(cache != null && cache[this.link] != null);
+    
+    if (this.isRead()) {
+        this.linkForMobile = '/cache?url=' + this.link;
+    }
 
     this.setRead = function() {
         this.isRead(true);
-        localStorage.setItem(this.link, true);
     };
 };

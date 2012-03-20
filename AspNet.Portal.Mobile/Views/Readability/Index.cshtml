@@ -7,4 +7,27 @@
     <a href="@ViewBag.Url" data-role="button" data-mini="true" data-inline="true">View original</a>
 }
 
-<div class="readable">@Html.Raw(ViewBag.Content)</div>
+@{
+    var content = Html.Raw(ViewBag.Content);
+    var url = ViewBag.Url;
+}
+
+<div class="readable">@content</div>
+
+<script>
+
+    $(function() {
+        var url = '@url';
+        var content = $('.readable').html();
+
+        var cache = JSON.parse(localStorage.getItem('readArticles'));
+        if (cache == null) {
+            cache = { };
+        }
+
+        cache[url] = content;
+
+        localStorage.setItem('readArticles', JSON.stringify(cache));
+    });
+        
+</script>
