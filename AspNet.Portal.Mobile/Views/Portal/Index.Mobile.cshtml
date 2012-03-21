@@ -2,14 +2,16 @@
     ViewBag.Title = "ASP.NET Articles";
 }
 
-<div>
-    <ul data-bind="foreach: articles" data-role="listview" data-theme="c">
+<div data-role="content-primary">
+    <ul data-bind="foreach: articles" data-role="listview" data-theme="d">
         <li>
-            <a data-bind="attr: { href: urlForMobile, title: title }, click: $parent.onArticleClicked">
+            <a data-bind="attr: { href: urlForMobile, title: title }, click: $parent.onArticleClicked" >
+                <!-- ko if: !cached -->
                 <img class="avatar" data-bind="attr: { src: imageUrl, alt: title }" />
+                <!-- /ko -->
                 <h3 data-bind="text: title"></h3>
-                <p class="date" data-bind="text: date"></p>
-                <p class="description" data-bind="text: description"></p>
+                <p data-bind="text: description"></p>
+                <p class="ui-li-aside" data-bind="text: date"></p>
             </a>
         </li>
     </ul>
@@ -27,7 +29,7 @@
     <script type="text/javascript">
 
         $(function() {
-            if (window.applicationOnline) {
+            if (true) {
                 ko.applyBindings(new ArticlesViewModel());
             } else {
                 ko.applyBindings(new ArticlesOfflineViewModel());

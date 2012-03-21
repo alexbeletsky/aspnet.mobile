@@ -9,11 +9,10 @@ namespace AspNet.Portal.Mobile.Controllers
 {
     public class ResourcesController : Controller
     {
+        [OutputCache(Duration = 5)]
         public ActionResult Manifest()
         {
-            var pages = new List<string>();
-            pages.Add("/");
-            pages.Add("/cache");
+            var pages = new List<string> {"/", "/cache"};
 
             var scriptsPaths = GetRelativePathsToRoot("~/Scripts/");
             var contentPaths = GetRelativePathsToRoot("~/Content/");
@@ -32,7 +31,7 @@ namespace AspNet.Portal.Mobile.Controllers
                         { "/", Url.Action("Fallback", "Portal") },
                         { "/Modes/Online.js", "/Modes/Offline.js" }
                     },
-                ExprirationToken = DateTime.Now.ToString("dd/MM/yyyy HH:mm")
+                ExprirationToken = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")
             };
 
             return manifestResult;

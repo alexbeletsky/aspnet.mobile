@@ -7,6 +7,7 @@
         this.date = d.Date;
         this.description = d.Description;
         this.imageUrl = d.ImageUrl;
+        this.cached = false;
 
         return this;
     };
@@ -28,10 +29,10 @@
             return;
 
         var cache = JSON.parse(localStorage.getItem('cache'));
-        
-        if (_.indexOf(cache.articles, this) == -1) {
-            cache.articles.push(this);
+
+        if (_.isUndefined(cache.articles[this.url])) {
+            cache.articles[this.url] = this;
             localStorage.setItem('cache', JSON.stringify(cache));
-        }
+        }        
     };
 };

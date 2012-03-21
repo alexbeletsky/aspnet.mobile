@@ -35,10 +35,6 @@ input[type="password"].input-validation-error {
 
     .articles .article
     {
-        padding: 15px 0;
-        min-height: 70px; 
-        margin-bottom: 20px;
-        border-bottom: 1px solid #c8c8c8;
     }
 
 .avatar
@@ -47,9 +43,9 @@ input[type="password"].input-validation-error {
     height: 100%;
 }
 
-.article .date
+.date
 {
-    font-size: 0.9em;
+    font-size: 0.6em;
     font-style: italic;
     padding: 4px 0;
     color: #999;
