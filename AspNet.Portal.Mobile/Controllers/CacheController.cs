@@ -12,6 +12,5 @@ namespace AspNet.Portal.Mobile.Controllers
         {
             return View();
         }
-
     }
 }

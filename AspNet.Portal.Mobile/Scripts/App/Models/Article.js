@@ -1,6 +1,8 @@
 ﻿function Article() {
 
-    this.fromData = function(d) {
+    var self = this;
+
+    self.fromData = function (d) {
         this.title = d.Title;
         this.url = decodeURIComponent(d.Link.replace( /\+/g , " "));
         this.urlForMobile = '/readability?url=' + this.url;
@@ -12,7 +14,7 @@
         return this;
     };
 
-    this.fromCache = function(d) {
+    self.fromCache = function (d) {
         this.title = d.title;
         this.url = d.url;
         this.urlForMobile = '/cache';
@@ -24,14 +26,14 @@
         return this;
     };
     
-    this.setRead = function () {
+    self.setRead = function () {
         if (this.cached)
             return;
 
         var cache = JSON.parse(localStorage.getItem('cache'));
 
-        if (_.isUndefined(cache.articles[this.url])) {
-            cache.articles[this.url] = this;
+        if (_.isUndefined(cache.articles[self.url])) {
+            cache.articles[self.url] = self;
             localStorage.setItem('cache', JSON.stringify(cache));
         }        
     };
