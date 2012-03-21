@@ -27,7 +27,7 @@
     <script type="text/javascript">
 
         $(function() {
-            if (false /*window.applicationOnline*/) {
+            if (window.applicationOnline) {
                 ko.applyBindings(new ArticlesViewModel());
             } else {
                 ko.applyBindings(new ArticlesOfflineViewModel());
