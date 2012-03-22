@@ -169,7 +169,8 @@
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
     <Content Include="Content\ipad\icon-big.png" />
-    <Content Include="Content\ipad\splash.png" />
+    <Content Include="Content\ipad\splash-748-1024.png" />
+    <Content Include="Content\ipad\splash-768-1004.png" />
     <Content Include="Content\ipad\touch.png" />
     <Content Include="Content\jquery.mobile-1.0b3.css" />
     <Content Include="Content\jquery.mobile-1.0b3.min.css" />
