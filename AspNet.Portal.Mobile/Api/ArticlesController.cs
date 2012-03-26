@@ -7,7 +7,7 @@ namespace AspNet.Portal.Mobile.Api
 {
     public class ArticlesController : ApiController
     {
-        private static readonly int DefaultPageSize = 5;
+        private static readonly int DefaultPageSize = 15;
 
         public IQueryable<Article> Get()
         {

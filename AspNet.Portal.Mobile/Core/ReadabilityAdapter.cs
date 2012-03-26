@@ -1,3 +1,4 @@
+using System.Linq;
 using NReadability;
 
 namespace AspNet.Portal.Mobile.Core
@@ -6,10 +7,15 @@ namespace AspNet.Portal.Mobile.Core
     {
         public string GetContent(string url)
         {
-            var read = new NReadabilityWebTranscoder();            
+            var readability = new NReadabilityWebTranscoder();            
             
             bool extracted;
-            return read.Transcode(url, out extracted);
+            var read = readability.Transcode(url, out extracted);
+
+            var document = new HtmlAgilityPack.HtmlDocument();
+            document.LoadHtml(read);
+
+            return document.DocumentNode.Descendants("div").Single(p => p.Id == "readInner").InnerHtml;
         }
     }
 }

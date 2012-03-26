@@ -37,12 +37,6 @@ input[type="password"].input-validation-error {
     {
     }
 
-.avatar
-{
-    width: 100%;
-    height: 100%;
-}
-
 .date
 {
     font-size: 0.6em;
@@ -112,6 +106,11 @@ li.read p, li.read h3
 li.read img
 {
     opacity: 0.7;
+}
+
+a.ui-link-inherit
+{
+    min-height: inherit !important;
 }
 
 

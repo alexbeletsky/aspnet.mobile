@@ -62,11 +62,13 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NReadability">
-      <HintPath>..\lib\NReadability\NReadability.dll</HintPath>
+    <Reference Include="NReadability, Version=1.3.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NReadability.1.3.16\lib\NReadability.dll</HintPath>
     </Reference>
-    <Reference Include="SgmlReaderDll">
-      <HintPath>..\lib\NReadability\SgmlReaderDll.dll</HintPath>
+    <Reference Include="SgmlReaderDll, Version=1.8.8.30578, Culture=neutral, PublicKeyToken=46b2db9ca481831b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NReadability.1.3.16\lib\SgmlReaderDll.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -292,17 +294,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
-          <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>1234</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1234/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:1234/</IISAppRootUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>True</UseCustomServer>
-          <CustomServerUrl>http://localhost:9100</CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
