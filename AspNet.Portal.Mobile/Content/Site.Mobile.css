@@ -33,79 +33,9 @@ input[type="password"].input-validation-error {
     width: 100%;
 }
 
-    .articles .article
-    {
-    }
-
-.date
+.avatar
 {
-    font-size: 0.6em;
-    font-style: italic;
-    padding: 4px 0;
-    color: #999;
-}
-
-.article .description
-{
-    
-}
-
-.article a
-{
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #3e5667;
-}
-
-.article img
-{
-    display: block;
-    float: left;
-    margin-right: 10px;
-}
-
-.controls
-{
-    text-align: center;
-}
-
-    .controls a
-    {
-        color: #3e5667;
-        font-weight: bold;
-    }
-
-        .controls a.disabled
-        {
-            color: #999;
-            cursor: default;
-            text-decoration: none;
-        }
-
-            .controls a.disabled:hover
-            {
-                background: none;
-            }
-
-.readable
-{
-    line-height: 1.4em;
-}
-
-    .readable h1
-    {
-        line-height: 1.2em;
-    }
-
-li.read p, li.read h3 
-{
-    color: #afafaf !important;
-}
-
-li.read img
-{
-    opacity: 0.7;
+    min-height: 100%;
 }
 
 a.ui-link-inherit

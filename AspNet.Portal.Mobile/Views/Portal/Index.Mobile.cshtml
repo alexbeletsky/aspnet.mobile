@@ -2,12 +2,12 @@
     ViewBag.Title = "ASP.NET Articles";
 }
 
-<div data-role="content-primary">
-    <ul data-bind="foreach: articles" data-role="listview" data-theme="d">
+<div class="content" data-role="content-primary">
+    <ul data-bind="foreach: articles" data-role="listview">
         <li>
             <a data-bind="attr: { href: urlForMobile, title: title }, click: $parent.onArticleClicked" >
                 <!-- ko if: !cached -->
-                <img data-bind="attr: { src: imageUrl, alt: title }" >
+                <img class="avatar"  data-bind="attr: { src: imageUrl, alt: title }" >
                 <!-- /ko -->
                 <h3 data-bind="text: title"></h3>
                 <p data-bind="text: description"></p>
@@ -15,11 +15,17 @@
             </a>
         </li>
     </ul>
+    <hr/>
+    <div class="ui-grid-a">
+        <div class="ui-block-a">
+            <a href="#" data-mini="true" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked" data-icon="arrow-l" data-role="button">Prev</a>
+        </div>
+        <div class="ui-grid-b">
+            <a href="#" data-mini="true" data-bind="click: nextPageClicked" data-icon="arrow-r" data-iconpos="right" data-role="button">Next</a>
+        </div>
+    </div>
 </div>
-<p class="controls">
-    <a href="#" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked" data-mini="true" data-inline="true" data-icon="arrow-l" data-role="button">Prev</a>
-    <a href="#" data-bind="click: nextPageClicked" data-mini="true" data-inline="true" data-icon="arrow-r" data-iconpos="right" data-role="button">Next</a>
-</p>
+
 
 @section Scripts {
     <script type="text/javascript" src="~/Scripts/App/Models/Article.js"></script>
@@ -27,8 +33,8 @@
     <script type="text/javascript" src="~/Scripts/App/ViewModels/ArticlesOfflineViewModel.js"></script>
 
     <script type="text/javascript">
-
-        $(function() {
+        
+        $(function () {
             if (window.applicationOnline) {
                 ko.applyBindings(new ArticlesViewModel());
             } else {
