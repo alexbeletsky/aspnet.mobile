@@ -10,3 +10,8 @@ Features:
 * Adapted for mobile phones and tablets
 * Use Readability for better articles rendering
 * Offline mode
+
+Requirements:
+
+* VS 2011 
+* ASP.NET MVC 4

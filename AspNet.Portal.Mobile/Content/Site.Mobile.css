@@ -33,14 +33,28 @@ input[type="password"].input-validation-error {
     width: 100%;
 }
 
-.avatar
+div.avatar
 {
-    min-height: 100%;
+    float: left;
+    display: inline-block;
+    padding: 0;
+    margin-right: 32px;
+
 }
+
+    div.avatar img
+    {
+        width: 60px;
+    }
 
 a.ui-link-inherit
 {
     min-height: inherit !important;
+}
+
+ul.ui-listview li
+{
+    min-height: 60px;
 }
 
 

@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "ASP.NET Articles";
+    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";    
 }
 
 <div class="content" data-role="content-primary">
@@ -7,7 +8,9 @@
         <li>
             <a data-bind="attr: { href: urlForMobile, title: title }, click: $parent.onArticleClicked" >
                 <!-- ko if: !cached -->
-                <img class="avatar"  data-bind="attr: { src: imageUrl, alt: title }" >
+                <div class="avatar">
+                    <img data-bind="attr: { src: imageUrl, alt: title }" >
+                </div>
                 <!-- /ko -->
                 <h3 data-bind="text: title"></h3>
                 <p data-bind="text: description"></p>

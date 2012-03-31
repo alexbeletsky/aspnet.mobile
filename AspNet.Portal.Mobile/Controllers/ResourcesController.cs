@@ -28,7 +28,7 @@ namespace AspNet.Portal.Mobile.Controllers
                 CacheResources = cacheResources,
                 FallbackResources = new Dictionary<string, string> 
                     { 
-                        { "/", Url.Action("Fallback", "Portal") },
+                        { "/", Url.Action("Fallback", "App") },
                         { "/Modes/Online.js", "/Modes/Offline.js" }
                     },
                 ExprirationToken = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")

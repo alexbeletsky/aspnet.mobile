@@ -87,7 +87,7 @@
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\System.Net.Http.Formatting.4.0.20126.16343\lib\net40\System.Net.Http.Formatting.dll</HintPath>	 
+      <HintPath>..\packages\System.Net.Http.Formatting.4.0.20126.16343\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -151,13 +151,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CacheController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReadabilityController.cs" />
     <Compile Include="Controllers\ResourcesController.cs" />
     <Compile Include="Core\AspNetPortalAdapter.cs" />
     <Compile Include="Core\ReadabilityAdapter.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Api\ArticlesController.cs" />
-    <Compile Include="Controllers\PortalController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,28 +215,13 @@
     <Content Include="Modes\Online.js" />
     <Content Include="Scripts\App\ViewModels\ArticlesViewModel.js" />
     <Content Include="Scripts\App\ViewModels\ArticlesOfflineViewModel.js" />
-    <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.6.2.js" />
-    <Content Include="Scripts\jquery-1.6.2.min.js" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
-    <Content Include="Scripts\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.11.js" />
-    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
     <Content Include="Scripts\jquery.mobile-1.0b3.js" />
-    <Content Include="Scripts\jquery.mobile-1.0b3.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Scripts\underscore.js" />
-    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -253,17 +239,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Portal\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Portal\Index.Mobile.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Readability\Index.cshtml" />
@@ -272,10 +253,13 @@
     <Folder Include="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Portal\Fallback.cshtml" />
+    <Content Include="Views\App\Fallback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Cache\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

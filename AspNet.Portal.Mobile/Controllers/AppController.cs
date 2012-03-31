@@ -2,7 +2,7 @@
 
 namespace AspNet.Portal.Mobile.Controllers
 {
-    public class PortalController : Controller
+    public class AppController : Controller
     {
         public ActionResult Index()
         {
