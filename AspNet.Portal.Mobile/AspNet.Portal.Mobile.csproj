@@ -166,6 +166,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\foundation.css" />
     <Content Include="Content\images\ajax-loader.png" />
     <Content Include="Content\images\icon-search-black.png" />
     <Content Include="Content\images\icons-18-black.png" />
@@ -178,8 +179,8 @@
     <Content Include="Content\ipad\touch.png" />
     <Content Include="Content\jquery.mobile-1.0b3.css" />
     <Content Include="Content\jquery.mobile-1.0b3.min.css" />
-    <Content Include="Content\reset.css" />
-    <Content Include="Content\Site.Mobile.css" />
+    <Content Include="Content\mobile.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -208,7 +209,6 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\App\CacheInit.js" />
     <Content Include="Scripts\App\Models\Article.js" />
     <Content Include="Modes\Offline.js" />
