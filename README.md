@@ -3,7 +3,7 @@ ASP.NET Portal for Mobile
 
 ASP.NET Portal for Mobile is a Mobile Web Application for ASP.NET portal fans.
 
-Available at: TODO
+Available at: http://aspnetmobile.apphb.com/
 
 Features:
 
