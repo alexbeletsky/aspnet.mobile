@@ -216,7 +216,7 @@
     <Content Include="Modes\Online.js" />
     <Content Include="Scripts\App\ViewModels\ArticlesViewModel.js" />
     <Content Include="Scripts\App\ViewModels\ArticlesOfflineViewModel.js" />
-    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\ga.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery.mobile-1.0b3.js" />
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
