@@ -27,6 +27,17 @@ h1, h2, h3, h4, h5, h6
     color: #222222;
 }
 
+h4
+{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+a
+{
+    color: #1693c4;
+}
+
 header
 {
     padding: 15px 0;
@@ -64,7 +75,6 @@ header
 
 .launch a
 {
-    color: #1693c4;
     font-family: 'Gloria Hallelujah', cursive;
     line-height: 551px;
     vertical-align: central;
