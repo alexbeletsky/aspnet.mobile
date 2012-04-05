@@ -173,6 +173,7 @@
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\iphone.png" />
     <Content Include="Content\ipad\icon-big.png" />
     <Content Include="Content\ipad\splash-1024-748.png" />
     <Content Include="Content\ipad\splash-768-1004.png" />

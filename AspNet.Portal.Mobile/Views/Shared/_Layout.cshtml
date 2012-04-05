@@ -3,39 +3,21 @@
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.6.4.js")"></script>
 
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/foundation.css")" />
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/site.css")" />
+        <link rel="stylesheet" type="text/css" href="~/Content/foundation.css" />
+        <link rel="stylesheet" type="text/css" href="~/Content/site.css" />
 
-        <meta name="viewport" content="width=device-width" />
+
     </head>
     <body>
-        <section class="container top-nav">
-                
-        </section>
-        
-        <section class="container">
-            <header class="row">
-                
-            </header>
-        </section>
-        
-        <section class="container">
-            <div class="row">
-                @RenderBody()                        
-            </div>
-        </section>
-        
-        <section class="container">
-            <footer class="row">
-                
-            </footer>
-        </section>
-
-
-        @RenderSection(name: "Scripts", required: false)
+        <div class="container">
+            @RenderBody()                        
+            @RenderSection(name: "Scripts", required: false)
+        </div>
     </body>
 </html>
