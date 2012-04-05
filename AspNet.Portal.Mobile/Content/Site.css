@@ -17,8 +17,8 @@ body {
     background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
     background: linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 15px;
+    line-height: 19px;
     color: #787878;
 }
 
@@ -45,7 +45,7 @@ header
 
     header h1
     {
-        font-size: 2.7em;
+        font-size: 2.9em;
         background: rgb(238,238,238);
         text-shadow: 2px 2px 5px #c2c2c2;
         filter: dropshadow(color=#c2c2c2, offx=2, offy=2);   
@@ -98,13 +98,36 @@ header
 
 .ptl
 {
-    padding-top: 18px;
+    padding-top: 20px;
 }
 
 .pbl
 {
-    padding-bottom: 18px;
+    padding-bottom: 20px;
 }
+
+hr
+{
+    padding: 25px 0;
+}
+
+footer
+{
+    padding: 75px 0 25px 0;
+    text-align: center;
+}
+
+    footer a
+    {
+        color: #636363;
+    }
+
+    footer p
+    {
+        color: #969696;
+        font-size: 0.7em;
+        margin: 4px 0;
+    }
 
 @media only screen and (max-width : 480px)
 {
