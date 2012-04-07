@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "asp.net articles";
 }
+@using Microsoft.Web.Helpers;
 
 
 <header class="row">
@@ -37,6 +38,20 @@
     </article>
 </section>
 
+<section class="row">    
+    <div class="six columns offset-by-six">
+        <ul class="like-buttons">
+            <li>
+                @Twitter.TweetButton(dataCount: "horizontal", tweetText: "I read newest #aspnet articles from mobile phone", url: "http://aspnetmobile.apphb.com/")
+            </li>
+            <li>
+                @Facebook.LikeButton(showFaces: false, buttonLayout: "button_count", width: 60, height: 30, href: "http://aspnetmobile.apphb.com/")
+            </li>            
+        </ul>
+
+    </div>
+</section>
+
 <footer class="row">
     <div class="twelve columns">
         <p>
@@ -47,4 +62,8 @@
         </p>
     </div>    
 </footer>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/ga.js"></script>
+}
 

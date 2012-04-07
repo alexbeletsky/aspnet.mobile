@@ -111,6 +111,31 @@ hr
     padding: 25px 0;
 }
 
+iframe 
+{
+     vertical-align: top;
+}
+
+ul.like-buttons 
+{
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+}
+
+ul.like-buttons li 
+{
+    display: inline;
+    float: right;
+    margin-right: 5px;
+}
+
+ul.like-buttons li.google 
+{
+    margin-top: -2px;
+}
+
 footer
 {
     padding: 75px 0 25px 0;
@@ -128,6 +153,8 @@ footer
         font-size: 0.7em;
         margin: 4px 0;
     }
+
+
 
 @media only screen and (max-width : 480px)
 {
