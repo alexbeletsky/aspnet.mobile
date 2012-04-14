@@ -18,8 +18,23 @@ namespace AspNet.Portal.Mobile.Core
             using (var httpClient = new WebClient())
             {
                 var response = httpClient.DownloadString(BaseUrl.With(pageNumber, pageSize));
-                return JsonConvert.DeserializeObject<Page>(response);
+                var page = JsonConvert.DeserializeObject<Page>(response);
+
+                var articles = page.Data.ToList();
+                articles.ForEach(a => a.Link = RemoveHashTag(a.Link));
+
+                return new Page { First = page.First, Last = page.Last, Media = page.Media, Data = articles };
             }
+        }
+
+        private string RemoveHashTag(string url)
+        {
+            if (url.Contains("#"))
+            {
+                return url.Substring(0, url.IndexOf("#"));
+            }
+
+            return url;
         }
     }
 
