@@ -4,7 +4,7 @@
 }
 
 <div class="content" data-role="content-primary">
-    <ul data-bind="foreach: articles" data-role="listview">
+    <ul data-bind="foreach: articles" data-role="listview" data-theme="c">
         <li>
             <a data-bind="attr: { href: urlForMobile, title: title }, click: $parent.onArticleClicked" >
                 <!-- ko if: !cached -->
