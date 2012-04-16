@@ -6,12 +6,6 @@ function ArticlesViewModel() {
     self.articles = ko.observableArray([]);
     self.currentPage = ko.observable(1);
 
-    $('.content').hide();
-    $.get('/api/articles', function (r) {
-        updateArticles(r);
-        $('.content').fadeIn();
-    });
-
     self.prevPageClicked = function () {
         var prevPage = self.currentPage() - 1;
         if (prevPage == 0)
@@ -37,6 +31,18 @@ function ArticlesViewModel() {
         article.setRead();
     };
 
+    var loadArticles = function () {
+        $.mobile.showPageLoadingMsg();
+
+        $('.content').hide();
+        $.get('/api/articles', function (r) {
+            $.mobile.hidePageLoadingMsg();
+
+            updateArticles(r);
+            $('.content').fadeIn();
+        });
+    };
+
     var updateArticles = function (r) {
         var mapped = $.map(r, function (a) { return new Article().fromData(a); });
         self.articles(mapped);
@@ -51,4 +57,11 @@ function ArticlesViewModel() {
             $.mobile.hidePageLoadingMsg();
         });
     }
+
+    $('#refresh').on('click', function () {
+        setTimeout(loadArticles, 500);
+    });
+
+    loadArticles();
+
 };

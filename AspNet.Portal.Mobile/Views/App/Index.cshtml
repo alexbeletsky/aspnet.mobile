@@ -3,6 +3,10 @@
     Layout = "~/Views/Shared/_Layout.Mobile.cshtml";    
 }
 
+@section header {
+    <a href="#" id="refresh" class="ui-btn-right" data-role="button" data-icon="refresh" data-iconpos="notext" title="refresh">Refresh</a>    
+}
+
 <div class="content" data-role="content-primary">
     <ul data-bind="foreach: articles" data-role="listview" data-theme="c">
         <li>
