@@ -4,7 +4,7 @@
 }
 
 @section header {
-    <a href="#" id="refresh" class="ui-btn-right" data-role="button" data-icon="refresh" data-iconpos="notext" title="refresh">Refresh</a>    
+    <a href="#" data-bind="click: refresh" class="ui-btn-right" data-role="button" data-icon="refresh" data-iconpos="notext" title="refresh">Refresh</a>    
 }
 
 <div class="content" data-role="content-primary">
@@ -22,15 +22,11 @@
             </a>
         </li>
     </ul>
-    <hr/>
-    <div class="ui-grid-a">
-        <div class="ui-block-a">
-            <a href="#" data-mini="true" data-bind="css: { disabled: currentPage() == 1 }, click: prevPageClicked" data-icon="arrow-l" data-role="button">Prev</a>
-        </div>
-        <div class="ui-grid-b">
-            <a href="#" data-mini="true" data-bind="click: nextPageClicked" data-icon="arrow-r" data-iconpos="right" data-role="button">Next</a>
-        </div>
+
+    <div class="more">
+        <a href="#" data-bind="click: showMore">More ...</a>
     </div>
+
 </div>
 
 
