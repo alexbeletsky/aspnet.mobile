@@ -12,6 +12,7 @@ namespace AspNet.Portal.Mobile.Controllers
 
             ViewBag.Url = url;
             ViewBag.Content = readablePage;
+            ViewBag.TweetUrl = string.Format("https://twitter.com/intent/tweet?url={0}", ViewBag.Url);
 
             return View();
         }

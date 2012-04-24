@@ -6,6 +6,7 @@
 @section header {
     <a href="/app" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Back</a>
     <a href="@ViewBag.Url" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-inline="true">Original</a>
+    <a href="@ViewBag.TweetUrl" data-role="button">Tweet</a>
 }
 
 <div class="readable">@Html.Raw(ViewBag.Content)</div>
